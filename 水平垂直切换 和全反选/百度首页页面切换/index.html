@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度导航</title>
+	<style type="text/css">
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+		.main{
+			width: 920px;
+			height: 320px;
+			margin:0 auto;
+		}
+		body{
+			background-image: url("images/bg.jpg");
+		}
+		.left ul li{
+			list-style:none;
+			color: white;
+			font-family:"微软雅黑";
+			font-size: 15px;
+			text-align:center;
+			line-height: 36px;
+		}
+		
+		.left{
+			width: 80px;
+			height: 320px;
+			float: left;
+			background-color: rgba(0,0,0,0.5);
+		}
+		
+		.left ul li:hover{
+			cursor:pointer;
+			background-color: rgba(0,0,0,0.2);
+		}
+
+
+		.right{
+			width: 810px;
+			height: 320px;
+			float:left;
+			margin-left: 20px;
+			overflow: hidden;
+		}
+
+		.select{
+			background-image: url(images/nav1.png);
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="left">
+			<ul>
+				<li onclick="choose(1)" class="select" >导航</li>
+				<li onclick="choose(2)">新闻</li>
+				<li onclick="choose(3)">音乐</li>
+				<li onclick="choose(4)">星座</li>
+				<li onclick="choose(5)">彩票</li>
+				<li onclick="choose(6)">视频</li>
+			</ul>
+		</div>
+
+
+		<div class="right">
+			
+			<div id="1"><img src="images/1.jpg" alt="图片暂时无法加载"></div>
+			<div id="2"><img src="images/2.jpg" alt="图片暂时无法加载"></div>
+			<div id="3"><img src="images/3.jpg" alt="图片暂时无法加载"></div>
+			<div id="4"><img src="images/4.jpg" alt="图片暂时无法加载"></div>
+			<div id="5"><img src="images/5.jpg" alt="图片暂时无法加载"></div>
+			<div id="6"><img src="images/6.jpg" alt="图片暂时无法加载"></div>
+		</div>
+	</div>
+	<!-- <script type="text/javascript">
+		
+		for(var i=2;i<=6;i++){
+			document.getElementById(i).style.display = "none";//让多余的div隐藏
+		}
+
+		function choose(obj){
+			for(var i=1;i<=6;i++){
+				document.getElementById(i).style.display = "none";	
+			}
+				document.getElementById(obj).style.display = "block";
+
+				var lis = document.getElementsByTagName('li');
+					for(var i=0;i<lis.length;i++){
+						lis[i].className = "";			//清除其他点击事件的样式
+					}
+
+				lis[obj-1].className = "select";   //给点击事件添加样式
+		}
+	</script> -->
+	
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(".left ul li").click(function(){
+			var index = $(this).index();		//获取li下标$(this)代表当前点击的li
+			// alert(index);
+			var t = -(index * 320);	
+			$(".right div:eq(0)").stop().animate({"margin-top":t},500);
+			$(".left ul li").removeClass("active");
+			$(".left ul li").eq(index).addClass("active");
+		});
+	</script>
+</body>
+</html>

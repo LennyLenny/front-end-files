@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="effect.js"></script>
+    <style>
+*{
+    padding:0px;
+    margin:0px;
+}
+
+        .box{
+            width:240px;
+            height:200px;
+            margin:20px;
+            float: left;
+        }
+
+        .box .front, .box #front1{
+            position: absolute;
+            transform:  perspective(600px) rotateY(0deg);
+            background: purple ;
+            width:240px;
+            height: 200px;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            transition:0.5s linear 0s;
+        }
+
+
+.box .back, .box #back1{
+    position: absolute;
+    transform:  perspective(600px) rotateY(180deg);
+    background: pink ;
+    width:240px;
+    height: 200px;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition:0.5s linear 0s;
+}
+
+
+
+.box:hover .front{
+            transform:  perspective(600px) rotateY(-180deg);
+        }
+
+
+.box:hover .back{
+    transform:perspective(600px)  rotateY(0deg);
+}
+
+
+
+
+       .box:hover  #front1{
+            transform:  rotateY(-180deg);
+        }
+
+
+        .box:hover #back1{
+            transform:  rotateY(0deg);
+
+        }
+    </style>
+</head>
+<body>
+<div  class="box">
+    <div class="front">front</div>
+    <div class="back">end</div>
+</div>
+
+<div  class="box">
+    <div class="front">front</div>
+    <div class="back">end</div>
+</div>
+
+<div  class="box">
+    <div id="front1">front</div>
+    <div id="back1">end</div>
+</div>
+
+   <script>
+   </script>
+</body>
+</html>

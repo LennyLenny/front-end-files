@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>AlloftheLights.js demo</title>
+
+        <style>
+
+			body { background: url(images/bg_body.jpg) repeat-x #e5e5e5; padding: 0; margin: 0; }
+
+			h1 { font-family: "Contrail One"; margin-bottom: 5px; font-size: 36px; }
+
+			.container { position: relative; padding: 50px; width: 45%; margin: 0 auto; }
+
+			h1 a, h1 a:link, h1 a:visited { color: #4C4C4C; text-decoration: none; }
+
+			h1 a:hover, h1 a:focus { color: #6B6B6B; text-decoration: none; }
+
+			#top { position: relative; display: block; background: #c72034; height: 10px; margin: 0 0 10px 0; border-bottom: 1px solid #E5E5E5; }
+
+        </style>
+
+
+		<!-- Allofthelights.js CSS -->
+
+		<link rel="stylesheet" href="jquery.allofthelights.css">
+
+    </head>
+
+    <body>     
+
+		<div id="top"></div>
+
+		<div class="container">
+
+			<h1>Demo </h1>			
+
+			<!-- Allofthelights.js switch & iframe video -->
+
+			<div id="switch"></div>
+
+			<iframe id="video" width="860" height="524" src="http://player.youku.com/embed/XMjQ0NzY4Mjcy" frameborder="0" allowfullscreen></iframe>
+
+		</div>
+
+    
+
+		<script src="js/jquery.min.js"></script>
+
+		
+
+		<!-- Allofthelights.js JS -->
+
+		<script src="js/jquery.allofthelights.js"></script>
+
+		<script>
+
+		$(document).ready(function() {
+
+			$("#video").allofthelights();  
+
+		});
+
+		</script>
+
+
+	</body>
+
+
+
+</html>
+

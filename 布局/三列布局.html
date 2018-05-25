@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二列布局</title>
+</head>
+<style type="text/css">
+/*该案例要求左侧200像素，右侧300像素*/
+	body{margin: 0;padding: 0}
+	.left{width: 200px;height: 500px;background-color: blue;position: absolute;left:0;top:0;}
+	.middle{height: 500px;background-color:#CCC; margin: 0 310px 0 210px;}/*加10让几个div之间有空隙*/
+	.right{width:300px;height: 500px;background-color:pink; position: absolute;right:0;top:0;}
+</style>
+<body>
+<div class="main">
+	<div class="left">200px</div>
+	<div class="middle">【央视调查：农民工讨薪四年讨不到 到底为什么?】又到年底，拖欠农民工工资的事时有发生。但有些农民工，他们已经讨了四年薪，依法维权，拿到了胜诉判决，可钱还是没到手。为什么这钱年年要、年年都要不到？什么时候才能按时拿钱，回家过年？</div>
+	<div class="right">300px</div>
+</div>
+</body>
+</html>

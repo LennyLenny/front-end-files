@@ -1,0 +1,22 @@
+*{
+    margin:10px;
+    padding:10px;
+}
+
+.wrap{
+    width:60%;
+    margin:0 auto;
+}
+container{
+    max-width:900px;
+    margin:0px auto;
+    background: #f9f9f9;
+    font-size:30px;
+    padding:25px;
+}
+
+.parallax-window{
+    min-height: 500px;
+    background: transparent;
+}
+

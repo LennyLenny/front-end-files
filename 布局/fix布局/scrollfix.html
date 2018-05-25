@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+      jQuery滚动页面当DIV到达顶部时固定在顶部，到底部是固定在底部
+    </title>
+  </head>
+  <style>
+    body{margin:0;padding:0;background:white;}div{width:100%}
+
+    nav{
+      height:50px;
+      width:100%;
+      background-color: pink;
+      line-height: 50px;
+      position: fixed;
+    }
+
+
+    nav ul li{
+      float: left;
+      width:252px;
+      list-style-type: none;
+      text-align: center;
+    }
+
+    img{
+      margin-top: 50px;
+    }
+
+      .just-placehoder{
+        margin-top:0px;
+        /*border:1px solid black;*/
+        padding:0px;
+      }
+
+    .fixed{
+      height: 279px; background: white; text-align: center;
+      width:350px;
+      border:1px solid red;
+    }
+
+    .fixed ul{
+      height:318px;
+      width:250px;
+      text-align: center;
+      list-style-type: none;
+
+
+    }
+
+
+    .fixed  ul li{
+      float:left;
+      width:250px;
+      height:42px;
+      border:1px solid grey;
+
+    }
+
+  </style>
+  <script src="js/jquery-1.12.0.min.js"></script>
+
+  
+  <body>
+
+  <nav class="navi">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </nav>
+
+  <img src="show.png" alt="">
+    <!-- 固定元素悬浮后，原来所在的位置会被空缺（height变成0），
+    导致页面闪跳且计算不准，所以必须设置一个确定高度的div框住 -->
+
+        <div class="just-placehoder">
+          <div class="fixed" >
+            <ul >
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+              <li>d</li>
+              <li>e</li>
+              <li>f</li>
+          </ul>
+          </div>
+        </div>
+
+
+    <div style="height:1200px;background: white"></div>
+
+
+    <script type="text/javascript">
+    $(function() {
+            var fix = $('.fixed');                      //滚动悬浮块
+            var navHeight = $(".navi").height();        //导航栏高度
+            var fixTop = fix.offset().top,    //滚动悬浮块与顶部的距离
+            fixHeight = fix.height();     //滚动悬浮块高度
+
+
+
+        $(window).scroll(function() {
+            //页面与顶部高度
+            var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+
+            console.log(docTop);
+            if (fixTop - navHeight <= docTop ) {
+//
+                fix.css({'position': 'fixed'});
+                          //滚动悬浮块未到结束块上时，top为0
+
+                fix.css({top: navHeight});
+
+            } else {
+                fix.css({'position': 'static'});
+            }
+        })
+    });
+    </script>
+  </body>
+
+</html>

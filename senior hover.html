@@ -1,0 +1,97 @@
+<!--要做这样的效果，注意三行hover语句，最后的那个选择器要统一，这例子里面改成a也可以-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul,li{
+            list-style-type: none;
+            text-align: center;
+        }
+
+        #wrap {
+            width:600px;
+            margin:0 auto;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%) ;
+
+        }
+
+        #wrap a{
+            display: block;
+            color:white;
+            text-decoration: none;
+            background: #900;
+            border-radius: 15px;
+
+
+        }
+
+
+        .one, .two, .three {
+            float: left;
+        }
+
+        .item{
+            width:100px;
+            height:20px;
+            border-radius: 15px;
+            margin:10px;
+            float:left;
+            cursor:pointer;
+        }
+
+        #wrap:hover .item{
+            opacity: 0.2;
+        }
+
+        #wrap:hover  ul:hover .item{
+            opacity: 0.6;
+        }
+
+        #wrap:hover ul:hover .item:hover{
+                opacity: 1;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+<div id="wrap">
+    <ul class="one">
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+    </ul>
+    <ul class="two">
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+    </ul>
+    <ul class="three">
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+        <li class="item"><a href="">--</a></li>
+    </ul>
+    </div>
+
+</div>
+</body>
+</html>

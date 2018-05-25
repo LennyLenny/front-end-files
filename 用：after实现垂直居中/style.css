@@ -1,0 +1,25 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.pic{
+    width:100%;
+    border:1px solid red;
+    text-align: center;
+    height:900px;
+}
+
+.pic img{
+    vertical-align: middle;
+}
+
+.pic:after{
+    display:inline-block;
+    width:0;
+    height:100%;
+    content:"some code here";
+    vertical-align:middle;
+    overflow:hidden;
+
+}

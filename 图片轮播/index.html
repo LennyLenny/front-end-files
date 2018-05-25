@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sia</title>
+    <script src="jquery-3.1.1.slim.js"></script>
+    <style>
+
+        /*#wrap{*/
+            /*position:relative;*/
+           /**/
+        /*}*/
+        img{
+            width:600px;
+            height:400px;
+            margin:auto;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%,0);
+        }
+        img:first-child{
+            z-index: 999;
+        }
+        ul{
+            float:left;
+            position: absolute;
+            left:50%;
+            z-index: 10000;
+            top:380px;
+
+        }
+        li{
+            width:10px;
+            height:10px;
+            background-color: red;
+            border:1px solid red;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            list-style-type: none;
+            float:left;
+            cursor:pointer;
+            margin-right: 20px;
+            top:380px;
+
+        }
+
+        li:first-child{
+            left:-50%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <img src="img/1.png" alt="">
+    <img src="img/2.png" alt="">
+    <img src="img/3.png" alt="">
+
+</div>
+
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+<script>
+    $(document).ready(function(){
+        $("li").hover(function(){
+           $("img").eq($(this).index()).show().siblings().hide();
+           console.log($(this).index());
+           clearInterval(IntervalId);
+
+        });
+                var IntervalId = setInterval(runTime,1000);
+
+    });
+    var i = -1;
+    function runTime() {
+        if(i==2){
+//            $("img").eq(2).show().siblings().hide();
+            i=-1;
+        }
+        i++;
+            $("img").eq(i).show().siblings().hide();
+
+        }
+
+
+
+</script>
+</body>
+</html>

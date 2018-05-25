@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度首页</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin:0;
+	}
+
+	body{
+		
+		padding:0;
+		background:url(image/bg.jpg);
+	}
+
+	.main{
+		width: 920px;
+		height: 320px;
+		margin:0 auto;
+	}
+	
+	.left{
+		width: 80px;
+		height: 320px;
+		float: left;
+		background: rgba(0,0,0,0.4);
+	}
+
+	.left ul{
+		width: 80px;
+		height: 320px;
+		list-style:none;
+		color: white;
+		margin-top: 0px;
+		
+	}
+
+	.left ul li{
+		line-height: 36px;
+		width: 80px;
+		text-align: center;
+	}
+	
+	.left ul li:hover{
+		background: rgba(0,0,0,0.2);
+		cursor: pointer;
+		background: url(image/nav1.png);
+	}
+	
+
+	.right{
+		width: 810px;
+		height: 320px;
+		float:left;
+		margin-left: 20px;
+		overflow: hidden;
+		}
+	
+	
+</style>
+<body>
+	<div class="main">
+		<div class="left">
+			<ul>
+				<li onclick="">导航</li>
+				<li onclick="">新闻</li>
+				<li onclick="">音乐</li>
+				<li onclick="">星座</li>
+				<li onclick="">彩票</li>
+				<li onclick="">视频</li>
+			</ul>
+		</div>
+
+		<div class="right">
+		<div><img src="image/1.jpg" alt="plz wait" id="1"></div>
+			<div><img src="image/2.jpg" alt="plz wait" id="1"></div>
+			<div><img src="image/3.jpg" alt="plz wait" id="1"></div>
+			<div><img src="image/4.jpg" alt="plz wait" id="1"></div>
+			<div><img src="image/5.jpg" alt="plz wait" id="1"></div>
+			<div><img src="image/6.jpg" alt="plz wait" id="1"></div>
+			
+		</div>
+	</div>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+	$(function(){
+			$(".left ul li").click(function(){
+				var _index =$(this).index();
+				var t = -(_index)*324;
+				
+				$(".right div:eq(0)").stop().animate({"margin-top":t},300);
+			});
+
+			$(".left ul li:nth-child(1)").css("background-color","blue");
+			
+	});
+		
+			
+	</script>
+</body>
+</html>
